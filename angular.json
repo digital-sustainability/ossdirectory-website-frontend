@@ -35,7 +35,6 @@
               ]
             },
             "scripts": [
-              "src/assets/sails.io.js"
             ]
           },
           "configurations": {

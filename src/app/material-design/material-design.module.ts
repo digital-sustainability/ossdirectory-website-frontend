@@ -48,7 +48,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
     FlexLayoutModule,
     ReactiveFormsModule,
     MatProgressBarModule,
-    MatBadgeModule, 
+    MatBadgeModule,
     MatChipsModule,
     MatDialogModule,
     MatTableModule,

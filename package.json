@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "ssl": "ng serve --ssl true --ssl-key ../graphql/localhost.key --ssl-cert ../graphql/localhost.crt",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "codegen": "gql-gen --config codegen.yml"
   },
   "private": true,
   "dependencies": {
@@ -16,23 +18,35 @@
     "@angular/common": "^8.1.1",
     "@angular/compiler": "^8.1.1",
     "@angular/core": "^8.1.1",
-    "@angular/flex-layout": "^8.0.0-beta.26",
+    "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "^8.1.1",
     "@angular/material": "^8.0.0",
     "@angular/platform-browser": "^8.1.1",
     "@angular/platform-browser-dynamic": "^8.1.1",
     "@angular/router": "^8.1.1",
-    "angular2-sails": "^0.2.8",
+    "apollo-angular": "^1.7.0",
+    "apollo-angular-link-http": "^1.6.0",
+    "apollo-angular-link-http-batch": "^1.7.0",
+    "apollo-cache-inmemory": "^1.3.2",
+    "apollo-client": "^2.6.0",
+    "apollo-link": "^1.2.11",
+    "apollo-link-context": "^1.0.19",
+    "apollo-link-ws": "^1.0.19",
+    "apollo-upload-client": "^11.0.0",
     "core-js": "^2.5.4",
+    "gql": "^1.1.2",
+    "graphql": "^14.3.1",
+    "graphql-codegen-introspection": "^0.18.2",
+    "graphql-tag": "^2.10.1",
     "rxjs": "^6.5.2",
+    "subscriptions-transport-ws": "^0.9.16",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^8.1.1",
     "@angular-devkit/build-angular": "~0.802.0-next.0",
-    "typescript": "~3.4.5",
     "@angular/cli": "~8.1.1",
+    "@angular/compiler-cli": "^8.1.1",
     "@angular/language-service": "^8.1.1",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
@@ -47,6 +61,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1"
+    "tslint": "~5.9.1",
+    "typescript": "~3.4.5"
   }
 }
