@@ -4,7 +4,7 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientXsrfModule } from '@angular/common/http';
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { GraphQLModule } from './graphql/graphql.module';
 import { ViewModule } from './view/view.module';
@@ -17,6 +17,11 @@ import { HomeComponent } from "./home/home.component";
     HomeComponent,
   ],
   imports: [
+      HttpClientModule,
+      HttpClientXsrfModule.withOptions({
+          cookieName: '_csrf',
+          headerName: 'XSRF-TOKEN'
+      }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
