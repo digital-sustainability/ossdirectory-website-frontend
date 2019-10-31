@@ -1,0 +1,15 @@
+<div class="badge-container" *ngIf="items">
+  <div class="community-badge" *ngFor="let community of items">
+    <img src="http://minio.digisus.ch/oss-directory/{{community.Community.imageUrl}}">
+  </div>
+  <div (click)="toggleAddNew()" class="add-community-badge">
+    <mat-icon>add</mat-icon>
+  </div>
+  <div *ngIf="addNew" class="add-community-badge-input">
+    <input type="text" matInput [(ngModel)]="community" [matAutocomplete]="auto">
+    <a (click)="addCommunityBadge()" class="submit-button">Add</a>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let community of allCommunities" [value]="community">{{community.translation[0].title}}</mat-option>
+    </mat-autocomplete>
+  </div>
+</div>

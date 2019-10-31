@@ -1,0 +1,7 @@
+<div *ngIf="formattedDate; else noDate" class="detail-form-input">
+  <body class="stats">Zuletzt geändert: {{formattedDate}}</body>
+</div>
+<ng-template #noDate>
+    <body class="stats">Kein Erstellungs-/Änderungsdatum gefunden.</body>
+</ng-template>
+

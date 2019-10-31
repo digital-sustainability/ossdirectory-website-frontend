@@ -1,0 +1,16 @@
+<ng-container [ngSwitch]="config.get('type')">
+
+  <app-client-grid *ngSwitchCase="'Client'">      </app-client-grid>
+  <app-community-grid *ngSwitchCase="'Community'">     </app-community-grid>
+  <app-event-grid *ngSwitchCase="'Event'">     </app-event-grid>
+  <app-job-grid *ngSwitchCase="'Job'">     </app-job-grid>
+  <app-news-grid *ngSwitchCase="'News'">      </app-news-grid>
+  <app-news-feed-grid *ngSwitchCase="'NewsFeed'">     </app-news-feed-grid>
+  <app-product-grid *ngSwitchCase="'Product'">     </app-product-grid>
+  <app-rss-grid *ngSwitchCase="'RSS'">     </app-rss-grid>
+  <app-success-story-grid *ngSwitchCase="'SuccessStory'">     </app-success-story-grid>
+  <app-vendor-grid *ngSwitchCase="'Vendor'">      </app-vendor-grid>
+
+  <app-default-grid *ngSwitchDefault></app-default-grid>
+
+</ng-container>

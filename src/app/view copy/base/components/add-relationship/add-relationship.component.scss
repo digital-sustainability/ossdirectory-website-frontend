@@ -1,0 +1,29 @@
+.add-relation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ededed;
+  width: 200px;
+  height: 200px;
+}
+
+.add-relation mat-icon {
+  color: white;
+  font-size: 60px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.add-relation mat-icon:hover {
+  color: black;
+}
+
+.submit-button {
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  font-weight: bold;
+  background-color: white;
+}

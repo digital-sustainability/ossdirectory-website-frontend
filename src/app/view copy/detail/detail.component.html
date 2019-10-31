@@ -1,0 +1,17 @@
+<ng-container *ngIf="!type">
+  <mat-progress-spinner></mat-progress-spinner>
+</ng-container>
+<ng-container *ngIf="type" [ngSwitch]="type">
+  <app-client-detail *ngSwitchCase="'Client'"></app-client-detail>
+  <app-community-detail *ngSwitchCase="'Community'">     </app-community-detail>
+  <app-event-detail *ngSwitchCase="'Event'">     </app-event-detail>
+  <app-job-detail *ngSwitchCase="'Job'">     </app-job-detail>
+  <app-news-detail *ngSwitchCase="'News'">      </app-news-detail>
+  <app-news-feed-detail *ngSwitchCase="'NewsFeed'">     </app-news-feed-detail>
+  <app-product-detail *ngSwitchCase="'Product'">     </app-product-detail>
+  <app-rss-detail *ngSwitchCase="'RSS'">     </app-rss-detail>
+  <app-success-story-detail *ngSwitchCase="'SuccessStory'">     </app-success-story-detail>
+  <app-vendor-detail *ngSwitchCase="'Vendor'">    </app-vendor-detail>
+  <app-default-detail *ngSwitchDefault></app-default-detail>
+</ng-container>
+

@@ -1,0 +1,11 @@
+.relations-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.relations-container .relation-item {
+  display: flex;
+  align-self: stretch;
+}

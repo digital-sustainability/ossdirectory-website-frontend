@@ -1,0 +1,37 @@
+<div class="detail-gradient">
+
+<div fxLayout="column" class="detail-overlay detail-container">
+  <div  fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="center">
+    <div fxFlex.gt-sm="1 1 30%" fxFlex.lt-md="1 1 100%" class="detail-left">
+      <div id="nw">
+        <ng-content select="[detail-nw]"></ng-content>
+      </div>
+      <mat-divider></mat-divider>
+      <div id="sw">
+        <ng-content select="[detail-sw]"></ng-content>
+      </div>
+    </div>
+    <div fxFlex.gt-sm="1 1 70%" fxFlex.lt-md="1 1 100%" class="detail-right">
+      <div id="ne-top">
+        <ng-content select="[detail-ne-top]"></ng-content>
+      </div>
+      <div id="ne-mid">
+        <ng-content select="[detail-ne-mid]"></ng-content>
+      </div>
+      <div id="ne-bot">
+        <ng-content select="[detail-ne-bot]"></ng-content>
+      </div>
+      <div id="se">
+        <ng-content select="[detail-se]"></ng-content>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <ng-content select="[detail-relations]"></ng-content>
+  </div>
+</div>
+
+</div>
+
+

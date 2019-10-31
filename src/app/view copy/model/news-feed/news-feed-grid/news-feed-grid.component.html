@@ -1,0 +1,29 @@
+<app-grid-layout>
+  <h1 grid-top>NewsFeed</h1>
+
+
+  <div *ngFor="let feed of newsfeed" grid-mid>
+    <h2><b>{{feed.name}}</b></h2>
+
+    <div fxLayout="row wrap" fxLayoutGap="40px">
+
+      <ng-container *ngFor="let item of feed.items">
+        <div
+          fxFlex.xs="200px"
+          fxFlex.sm="200px"
+          fxFlex.md="200px"
+          fxFlex.lg="200px"
+          fxFlex.xl="200px"
+
+          fxLayout="column">
+          <a href="{{item.link}}" target="_blank">
+            <h3>{{item.title}}</h3>
+          </a>
+          <h4>{{item.pubDate}}</h4>
+          <!-- Export style and check how well fxLayoutGap works in different browsers -->
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</app-grid-layout>

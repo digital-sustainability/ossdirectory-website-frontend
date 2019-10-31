@@ -1,0 +1,26 @@
+
+<div fxLayout="row">
+
+    <div fxFlex="200px">
+        <ng-content select="[grid-left]"></ng-content>
+      </div>
+
+  <div fxLayout="column" fxFlex="grow">
+
+      <div>
+        <ng-content select="[grid-top]"></ng-content>
+      </div>
+
+    <div >
+      <ng-content select="[grid-mid]"></ng-content>
+    </div>
+    
+    <div fxFlex="50px">
+      <ng-content select="[grid-bot]" ></ng-content>
+    </div>
+  </div>
+
+  <div fxFlex="200px">
+        <ng-content select="[grid-right]"></ng-content>
+      </div>
+</div>

@@ -1,0 +1,7 @@
+<mat-form-field>
+  <input type="text" class="search" placeholder="Search" matInput [(ngModel)]="searchString">
+  <!--<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let item of items" [value]="item">{{item}}</mat-option>
+  </mat-autocomplete>-->
+</mat-form-field>
+<a class="mat-button" (click)="onSearch()">Search</a>

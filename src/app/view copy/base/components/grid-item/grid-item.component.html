@@ -1,0 +1,20 @@
+<div fxLayout="column"
+
+     style="margin-bottom: 40px; "
+
+     fxFlex.xs="200px"
+     fxFlex.sm="200px"
+     fxFlex.md="200px"
+     fxFlex.lg="200px"
+     fxFlex.xl="200px">
+  <div class="grid-item-border">
+    <div *ngIf="item.sequence" class="grid-item-overlay"
+         routerLink="/hier-kommt-spezifischer-text/{{item.sequence}}/oder-auch-hier/bald-auch-ganz-dynamisch">
+      <img *ngIf="item.imageUrl" [src]="item.imageUrl">
+    </div>
+  </div>
+</div>
+<!--  export styles and make a variable for margin-bottom (coresponds with layoutgap in parent view)-->
+
+
+

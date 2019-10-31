@@ -1,0 +1,39 @@
+<app-grid-layout>
+  <div grid-top>
+  <h1>{{type}}</h1>
+    <mat-form-field>
+      <input type="text" class="search" placeholder="Search" matInput [(ngModel)]="searchString">
+      <!--<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let item of items" [value]="item">{{item}}</mat-option>
+      </mat-autocomplete>-->
+    </mat-form-field>
+    <a class="mat-button" (click)="updateGrid()">Search</a>
+  </div>
+
+  <div grid-mid fxLayout="row wrap" fxLayoutGap="40px">
+      <ng-container *ngFor="let item of items">
+        <div 
+          fxFlex.xs="200px"
+          fxFlex.sm="200px"
+          fxFlex.md="200px"
+          fxFlex.lg="200px"
+          fxFlex.xl="200px"
+          
+          fxLayout="column">
+
+            <app-grid-item 
+              fxLayout="column"
+
+              style="margin-bottom: 40px; "
+
+              fxFlex.xs="200px"
+              fxFlex.sm="200px"
+              fxFlex.md="200px"
+              fxFlex.lg="200px"
+              fxFlex.xl="200px"
+              [item]="item"></app-grid-item> <!-- Export style and check how well fxLayoutGap works in different browsers -->
+        </div>
+      </ng-container>
+    
+  </div>
+</app-grid-layout>
