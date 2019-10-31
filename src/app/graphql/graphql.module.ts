@@ -15,12 +15,12 @@ const ws_uri = environment.graphqlWSURL;
 
 export function createApollo(httpLink: HttpBatchLink) {
 
-    const wss = new WebSocketLink({
-        uri: ws_uri,
-        options: {
-            reconnect: true,
-        }
-    });
+    // const wss = new WebSocketLink({
+    //     uri: ws_uri,
+    //     options: {
+    //         reconnect: true,
+    //     }
+    // });
     const https = httpLink.create({
         uri,
     });
@@ -37,15 +37,16 @@ export function createApollo(httpLink: HttpBatchLink) {
     // });
 
   return {
-    link: split(
-        ({ query }) => {
-            const definition = getMainDefinition(query);
-            return definition.kind === 'OperationDefinition' && definition.operation === 'subscription';
-        },
-        wss,
-        // authLink.concat(https),
-        https,
-    ),
+    // link: split(
+    //     ({ query }) => {
+    //         const definition = getMainDefinition(query);
+    //         return definition.kind === 'OperationDefinition' && definition.operation === 'subscription';
+    //     },
+    //     wss,
+    //     // authLink.concat(https),
+    //     https,
+    // ),
+    link: https,
     cache: new InMemoryCache({
         dataIdFromObject: (o: any) => o.sequence // make sequence the new identifier
     }),

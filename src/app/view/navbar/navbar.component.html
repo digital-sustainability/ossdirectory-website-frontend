@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <div fxShow="true" fxHide.gt-sm="true">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <img id="logo" src="https://minio.digisus.ch/oss-directory/oss-logo.png">
+  <div fxFlex="1 1 auto">
+    <a mat-button routerLink="/">Home</a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-button routerLink="/content/vendor">Vendors</a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-button routerLink="/content/client">Clients</a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-button routerLink="/content/community">Communities</a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-button routerLink="/content/product">Products</a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-button routerLink="/content/successstory">Success Stories</a>
+  </div>
+
+  <button class="user-menu-button" mat-button [matMenuTriggerFor]="menu"><i class="material-icons">person</i></button>
+
+  <mat-menu #menu="matMenu">
+    <a *ngIf="!authenticated" mat-button routerLink="/login" routerLinkActive="active">Login</a>
+    <a *ngIf="!authenticated" mat-button routerLink="/register" routerLinkActive="active">Register</a>
+    <a *ngIf="authenticated" mat-button routerLink="/user/edit" routerLinkActive="active">Edit user</a>
+    <a *ngIf="authenticated" mat-button (click)="logout()">Logout</a>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+  <div fxLayout="column">
+    <a mat-list-item routerLink="/">Home</a>
+    <a mat-list-item routerLink="/content/vendor">Vendors</a>
+    <a mat-list-item routerLink="/content/client">Clients</a>
+    <a mat-list-item routerLink="/content/product">Products</a>
+    <a mat-list-item routerLink="/content/successstory">Success Stories</a>
+    <a *ngIf="!authenticated" mat-list-item routerLink="/login" routerLinkActive="active">Login</a>
+    <a *ngIf="!authenticated" mat-list-item routerLink="/register" routerLinkActive="active">Register</a>
+    <a *ngIf="authenticated" mat-list-item routerLink="/user/edit" routerLinkActive="active">Edit user</a>
+    <a *ngIf="authenticated" mat-list-item (click)="logout()">Logout</a>
+  </div>
+</mat-sidenav>

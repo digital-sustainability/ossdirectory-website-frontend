@@ -1,0 +1,31 @@
+.nav-arrow-container {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.navbar-button-wrapper {
+  width: 100%;
+  padding: 2px 0;
+  cursor: pointer;
+}
+
+.navbar-button-wrapper:hover {
+  background-color: #efefef;
+  color: #f3aa00;
+}
+
+.navbar-button {
+  color: #451250;
+  text-decoration: none;
+  width: 100%;
+}
+
+.navbar-button:active {
+  color: #f3aa00;
+}
+
+.active-link {
+  color: #f3aa00;
+}

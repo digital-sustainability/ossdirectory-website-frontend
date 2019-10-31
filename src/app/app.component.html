@@ -1,5 +1,83 @@
-<router-outlet></router-outlet>
-
-
-
-
+<mat-toolbar id="toolbar">
+    <div style="display:flex;">
+      <button fxShow fxHide.gt-sm mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon id="menu">menu</mat-icon>
+  
+      </button>
+    </div>
+    <!--<div class="toolbar-menu" fxFlex="1 1 auto" fxShow.gt-sm>
+      <a mat-button routerLink="/">Home</a>
+      <mat-divider [vertical]="true"></mat-divider>
+      <a mat-button routerLink="/content/vendor">Vendors</a>
+      <mat-divider [vertical]="true"></mat-divider>
+      <a mat-button routerLink="/content/client">Clients</a>
+      <mat-divider [vertical]="true"></mat-divider>
+      <a mat-button routerLink="/content/community">Communities</a>
+      <mat-divider [vertical]="true"></mat-divider>
+      <a mat-button routerLink="/content/product">Products</a>
+      <mat-divider [vertical]="true"></mat-divider>
+      <a mat-button routerLink="/content/successstory">Success Stories</a>
+    </div>-->
+  
+    <!--<button fxShow.gt-sm class="user-menu-button" mat-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon></button>
+  
+    <mat-menu fxLayout="column" #menu="matMenu">
+      <a *ngIf="!authenticated" mat-button routerLink="/login" routerLinkActive="active">Login</a>
+      <a *ngIf="!authenticated" mat-button routerLink="/register" routerLinkActive="active">Register</a>
+      <a *ngIf="authenticated" mat-button routerLink="/user/edit" routerLinkActive="active">Edit user</a>
+      <a *ngIf="authenticated" mat-button (click)="logout()">Logout</a>
+    </mat-menu>-->
+    <div id="logo-container">
+      <div id="logo-background">
+        <img id="logo" src="https://minio.digisus.ch/oss-directory/OSSD_Logo_rgb.svg">
+      </div>
+    </div>
+  </mat-toolbar>
+  <div id="flex-sidenav">
+  <mat-sidenav-container fxLayout="column" class="mat-typography" fxFlexFill>
+  
+    <!-- fxShow fxHide.gt-sm -->
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="side" opened="true" >
+      <div class="menu" fxLayout="column">
+        <!--<app-navbar-item [label]="'Home'" [url]="'/'"></app-navbar-item>-->
+        <app-navbar-item *ngFor="let item of navbarItems" (activate)="activateLink(item)" [item]="item" [active]="selectedItem === item"></app-navbar-item>
+        <!--<a mat-button routerLink="/"><img src="https://minio.digisus.ch/oss-directory/oss-arrow.svg" height="20px"> Home</a>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/content/vendor">Vendors</a>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/content/client">Clients</a>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/content/product">Products</a>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/content/successstory">Success Stories</a>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/content/newsfeed">News Feed</a>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/content/topnews">Top News</a>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/content/event">Events</a>
+        <mat-divider></mat-divider>
+        <a *ngIf="!authenticated" mat-button routerLink="/login" routerLinkActive="active">Login</a>
+        <mat-divider></mat-divider>
+        <a *ngIf="!authenticated" mat-button routerLink="/register" routerLinkActive="active">Register</a>
+        <mat-divider></mat-divider>
+        <a *ngIf="authenticated" mat-button routerLink="/user/edit" routerLinkActive="active">Edit user</a>
+        <a *ngIf="authenticated" mat-button (click)="logout()">Logout</a>-->
+      </div>
+    </mat-sidenav>
+  
+    <mat-sidenav-content fxFLexFill>
+  
+      <div id="content" fxFlex>
+        <router-outlet></router-outlet>
+      </div>
+  
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  </div>
+  <app-footer></app-footer>
+  
+  
+  
+  
+  

@@ -1,0 +1,30 @@
+#footer {
+  position: relative;
+  height: 100px;
+  background-color: #464646;
+  color: white;
+}
+
+#footer-content {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 150px;
+  width: 50%;
+}
+
+#skew {
+  width: 150px;
+  height: 60px;
+  background-color: #f0613d;
+  -webkit-transform: skew(-45deg);
+  -ms-transform: skew(-45deg);
+  transform: skew(-45deg);
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+

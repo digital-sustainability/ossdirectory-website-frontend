@@ -1,0 +1,23 @@
+.sidenav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mat-toolbar {
+  position: fixed;
+}
+
+.mat-divider.mat-divider-vertical {
+  height: 70%;
+}
+
+.user-menu-button i {
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+#logo {
+  height: 70%;
+}

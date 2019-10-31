@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+@import "oss-palettes";
+
+$oss-theme-primary: mat-palette($secondary-palette, 500, 100, 900);
+$oss-theme-accent: mat-palette($primary-palette);
+$oss-theme-warn: mat-palette($mat-deep-orange, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$oss-theme: mat-light-theme(
+    $oss-theme-primary,
+    $oss-theme-accent,
+    $oss-theme-warn
+);

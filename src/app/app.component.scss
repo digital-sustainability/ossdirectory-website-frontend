@@ -1,0 +1,98 @@
+@import "oss-theme";
+@import "~@angular/material/theming";
+
+#content {
+  margin-top: 64px;
+}
+
+.sidenav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.menu {
+  padding-top:74px;
+  position: fixed;
+  width: 200px;
+}
+
+mat-toolbar {
+  position: fixed;
+  color: white;
+}
+
+.toolbar-menu, .mat-divider, mat-icon#menu {
+  color: white;
+}
+
+.mat-divider.mat-divider-vertical {
+  height: 70%;
+  border-color: white;
+}
+
+.user-menu-button mat-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+mat-sidenav-content {
+  background-color: white;
+}
+
+#flex-sidenav {
+  display: flex;
+}
+
+mat-sidenav-container {
+  flex: 1 1 auto;
+  min-height: 100vh!important;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+#toolbar {
+  background-image: linear-gradient(to right, #01b9ce, #451250);
+  justify-content: space-between;
+}
+
+#logo-container {
+  height: 100%;
+  width: auto;
+}
+
+#logo-background {
+  transform: skew(-45deg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+
+#logo {
+  padding: 0 60px;
+  height: 70%;
+  transform: skew(45deg);
+}
+
+#logo-background:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  transform: skew(45deg);
+  z-index: -1;
+}

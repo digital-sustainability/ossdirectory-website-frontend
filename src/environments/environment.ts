@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://localhost:1337/',
-  graphqlURL: 'https://localhost:3000/graphql',
-  graphqlWSURL: 'wss://localhost:3000/graphql',
+  apiURL: 'http://localhost:3000/',
+  graphqlURL: 'http://localhost:3000/graphql',
+  graphqlWSURL: 'ws://localhost:3000/graphql',
 };
 
 /*
