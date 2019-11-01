@@ -9,9 +9,7 @@ import { GQLParam } from '../graphql';
 
 const Query = (sequence) => gql`
     query Entry {
-      Entry : findBySequence(sequence : "${sequence}"){
-        __typename
-     }
+      Entry : findBySequence(sequence : "${sequence}")
    }
   `;
 
@@ -136,9 +134,9 @@ export class ApolloService {
     }).valueChanges.pipe(
       map(
         ({ data }) => {
-          console.log(data.Entry.__typename)
-          this.config.set("type", data.Entry.__typename);
-          return data.Entry.__typename;
+          console.log(data.Entry)
+          this.config.set("type", data.Entry);
+          return data.Entry;
         }
       )
     )
