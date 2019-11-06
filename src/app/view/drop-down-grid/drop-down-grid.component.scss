@@ -1,0 +1,21 @@
+.expansion-panel {
+  min-height: 220px;
+  overflow: hidden;
+  max-height: 220px;
+  transition: max-height .3s ease-out;
+}
+
+.panel-open {
+  max-height: 1000px;
+  transition: max-height .3s ease-in;
+  overflow-y: auto;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expansion-panel-icon {
+  cursor: pointer;
+}

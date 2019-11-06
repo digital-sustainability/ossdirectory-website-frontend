@@ -1,9 +1,17 @@
 <mat-divider></mat-divider>
-<div>
+<div class="panel-title">
   <ng-content select="[drop-down-grid-header]"></ng-content>
+  <div (click)="toggleExpansionPanel()">
+    <a class="expansion-panel-icon">
+      <mat-icon *ngIf="!expansionPanelOpen">keyboard_arrow_down</mat-icon>
+    </a>
+    <a class="expansion-panel-icon">
+      <mat-icon *ngIf="expansionPanelOpen">keyboard_arrow_up</mat-icon>
+    </a>
+  </div>
 </div>
-<div class="hello">
-  <div fxLayout="row wrap" fxLayoutGap="40px">
+<div> <!-- TODO: hardcoded height for expansion panel -->
+  <div [ngClass]="{'panel-open': expansionPanelOpen}" class="expansion-panel">
     <ng-content select="[drop-down-grid-items]"></ng-content>
   </div>
 </div>
