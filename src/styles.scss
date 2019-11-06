@@ -50,3 +50,38 @@ body {
 .card-img {
     width: 100%;
 }
+
+.detail-form-input {
+
+  input {
+    padding: 3px;
+    margin: 3px;
+  }
+
+  input:disabled, textarea:disabled {
+    color: black;
+    background-color: white;
+  }
+
+  input:disabled::-webkit-input-placeholder, textarea:disabled::-webkit-input-placeholder { /* WebKit browsers */
+    color: #fff;
+  }
+  input:disabled:-moz-placeholder, textarea:disabled:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+  }
+  input:disabled::-moz-placeholder, textarea:disabled::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;
+  }
+  input:disabled:-ms-input-placeholder, textarea:disabled:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #fff;
+  }
+
+  input:focus {
+    outline: 1px solid #555;
+  }
+
+  input {
+    border: none;
+  }
+
+}
