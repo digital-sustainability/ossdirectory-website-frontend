@@ -51,6 +51,9 @@ import {FormsModule} from "@angular/forms";
 import { VendorSuccessstoryRelationItemComponent } from './model/vendor/vendor-successstory-relation-item/vendor-successstory-relation-item.component';
 import { VendorProductRelationCreateItemComponent } from './model/vendor/vendor-product-relation-create-item/vendor-product-relation-create-item.component';
 import { VendorSuccessstoryRelationCreateItemComponent } from './model/vendor/vendor-successstory-relation-create-item/vendor-successstory-relation-create-item.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistrationComponent } from './auth/registration/registration.component';
+import { SnackbarComponent } from './notification/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +94,10 @@ import { VendorSuccessstoryRelationCreateItemComponent } from './model/vendor/ve
     SuccessStoryClientRelationItemComponent,
     VendorSuccessstoryRelationItemComponent,
     VendorProductRelationCreateItemComponent,
-    VendorSuccessstoryRelationCreateItemComponent
+    VendorSuccessstoryRelationCreateItemComponent,
+    LoginComponent,
+    RegistrationComponent,
+    SnackbarComponent
 
   ],
   imports: [

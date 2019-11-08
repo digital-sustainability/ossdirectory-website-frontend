@@ -1,6 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { HomeComponent } from "./home/home.component";
+import { LoginComponent } from "./view/auth/login/login.component";
+import { RegistrationComponent } from "./view/auth/registration/registration.component";
 
 const routes: Routes = [
 
@@ -9,7 +11,17 @@ const routes: Routes = [
         component: HomeComponent,
         pathMatch: 'full',
         data: {state: 'home'}
-      },
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+        pathMatch: 'full',
+    },
+    {
+        path: 'register',
+        component: RegistrationComponent,
+        pathMatch: 'full',
+    },
 
   /*
   OSS Implementation
