@@ -75,7 +75,7 @@ export class ApolloService {
    * @param variables
    * @param optimisticResponse
    */
-  public mutateObservable(mutation: any, variables: any, optimisticResponse?: any): Observable<any> {
+  public mutateObservable(mutation: any, variables: any = {}, optimisticResponse?: any): Observable<any> {
     const observable = this.apollo.mutate({
       mutation,
       variables,

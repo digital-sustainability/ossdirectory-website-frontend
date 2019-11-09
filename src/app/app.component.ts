@@ -13,33 +13,34 @@ import { RouteService } from './route/services/route.service';
 export class AppComponent {
   title = 'Sails Angular';
 
-  navbarItems : any[] = [
-    { name: "Home", url: "/" },
-    { name: "Vendors", url: "/content/vendor" },
-    { name: "Clients", url: "/content/client" },
-    { name: "Products", url: "/content/product" },
-    { name: "Success Stories", url: "/content/successstory" },
-    { name: "News Feed", url: "/content/newsfeed" },
-    { name: "Top News", url: "/content/topnews" },
-    { name: "Events", url: "/content/event" },
-    { name: "Login", url: "/login" },
-    { name: "Register", url: "/register" }
+  navbarItems: any[] = [
+    { name: 'Home', url: '/' },
+    { name: 'Vendors', url: '/content/vendor' },
+    { name: 'Clients', url: '/content/client' },
+    { name: 'Products', url: '/content/product' },
+    { name: 'Success Stories', url: '/content/successstory' },
+    { name: 'News Feed', url: '/content/newsfeed' },
+    { name: 'Top News', url: '/content/topnews' },
+    { name: 'Events', url: '/content/event' },
+    { name: 'Login', url: '/login' },
+    { name: 'Register', url: '/register' },
+    { name: 'Create New', url: '/create' }
   ];
   selectedItem = this.navbarItems[0];
 
   constructor(
-    //private _sailsService: SailsService,
+    // private _sailsService: SailsService,
     private router: Router,
-    private route : RouteService, //load route service in app component such that all children can access it
-    private snackbar: MatSnackBar){}
+    private route: RouteService, // load route service in app component such that all children can access it
+    private snackbar: MatSnackBar) {}
 
   ngOnInit() {
-    
+
 
   }
 
   activateLink(item) {
     this.selectedItem = item;
   }
-  
+
 }

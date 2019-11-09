@@ -1,1 +1,21 @@
-<app-default-detail></app-default-detail>
+<app-default-detail>
+  <div detail-relations>
+    <app-drop-down-grid>
+      <h2 drop-down-grid-header>Vendors</h2>
+      <div fxLayout="row wrap" fxLayoutGap="40px" drop-down-grid-items>
+        <app-add-relationship (onAccept)="addVendor($event)" [component]="productVendor"></app-add-relationship>
+        <app-product-vendor-relation-item class="relation-item" *ngFor="let vendor of vendors"
+                                          [vendor]="vendor.Vendor"></app-product-vendor-relation-item>
+      </div>
+    </app-drop-down-grid>
+    <app-drop-down-grid>
+      <h2 drop-down-grid-header>Success Stories</h2>
+      <div fxLayout="row wrap" fxLayoutGap="40px" drop-down-grid-items>
+        <app-add-relationship (onAccept)="addSuccessStory($event)"
+                              [component]="productSuccessStory"></app-add-relationship>
+        <app-product-successstory-relation-item class="relation-item" *ngFor="let successStory of successStories"
+                                               [successStory]="successStory"></app-product-successstory-relation-item>
+      </div>
+    </app-drop-down-grid>
+  </div>
+</app-default-detail>

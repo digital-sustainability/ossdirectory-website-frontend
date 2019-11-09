@@ -40,10 +40,7 @@ import { DropDownGridLayoutComponent } from './drop-down-grid/drop-down-grid-lay
 import { DropDownGridHeaderDirective } from './drop-down-grid/directives/drop-down-grid-header.directive';
 import { DropDownGridItemsDirective } from './drop-down-grid/directives/drop-down-grid-items.directive';
 import { DropDownGridDirectiveModule } from './drop-down-grid/directives/drop-down-grid-directive.module';
-import { VendorClientRelationItemComponent } from './model/vendor/vendor-client-relation-item/vendor-client-relation-item.component';
 import { VendorProductRelationItemComponent } from './model/vendor/vendor-product-relation-item/vendor-product-relation-item.component';
-import { VendorCommunityRelationItemComponent } from './model/vendor/vendor-community-relation-item/vendor-community-relation-item.component';
-import { ClientProductRelationItemComponent } from './model/client/client-product-relation-item/client-product-relation-item.component';
 import { SuccessStoryProductRelationItemComponent } from './model/success-story/success-story-product-relation-item/success-story-product-relation-item.component';
 import { SuccessStoryVendorRelationItemComponent } from './model/success-story/success-story-vendor-relation-item/success-story-vendor-relation-item.component';
 import { SuccessStoryClientRelationItemComponent } from './model/success-story/success-story-client-relation-item/success-story-client-relation-item.component';
@@ -51,6 +48,22 @@ import {FormsModule} from "@angular/forms";
 import { VendorSuccessstoryRelationItemComponent } from './model/vendor/vendor-successstory-relation-item/vendor-successstory-relation-item.component';
 import { VendorProductRelationCreateItemComponent } from './model/vendor/vendor-product-relation-create-item/vendor-product-relation-create-item.component';
 import { VendorSuccessstoryRelationCreateItemComponent } from './model/vendor/vendor-successstory-relation-create-item/vendor-successstory-relation-create-item.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistrationComponent } from './auth/registration/registration.component';
+import { SnackbarComponent } from './notification/snackbar/snackbar.component';
+import { ClientSuccessstoryRelationCreateItemComponent } from './model/client/client-successstory-relation-create-item/client-successstory-relation-create-item.component';
+import { ClientSuccessstoryRelationItemComponent } from './model/client/client-successstory-relation-item/client-successstory-relation-item.component';
+import { SuccessstoryClientRelationItemComponent } from './model/success-story/successstory-client-relation-item/successstory-client-relation-item.component';
+import { SuccessstoryVendorRelationItemComponent } from './model/success-story/successstory-vendor-relation-item/successstory-vendor-relation-item.component';
+import { SuccessstoryVendorRelationCreateItemComponent } from './model/success-story/successstory-vendor-relation-create-item/successstory-vendor-relation-create-item.component';
+import { SuccessstoryClientRelationCreateItemComponent } from './model/success-story/successstory-client-relation-create-item/successstory-client-relation-create-item.component';
+import { SuccessstoryProductRelationItemComponent } from './model/success-story/successstory-product-relation-item/successstory-product-relation-item.component';
+import { SuccessstoryProductRelationCreateItemComponent } from './model/success-story/successstory-product-relation-create-item/successstory-product-relation-create-item.component';
+import { ProductVendorRelationItemComponent } from './model/product/product-vendor-relation-item/product-vendor-relation-item.component';
+import { ProductVendorRelationCreateItemComponent } from './model/product/product-vendor-relation-create-item/product-vendor-relation-create-item.component';
+import { ProductSuccessstoryRelationCreateItemComponent } from './model/product/product-successstory-relation-create-item/product-successstory-relation-create-item.component';
+import { ProductSuccessstoryRelationItemComponent } from './model/product/product-successstory-relation-item/product-successstory-relation-item.component';
+import { CreateNewComponent } from './create-new/create-new.component';
 
 @NgModule({
   declarations: [
@@ -82,16 +95,29 @@ import { VendorSuccessstoryRelationCreateItemComponent } from './model/vendor/ve
     GridLayoutComponent,
     DropDownGridComponent,
     DropDownGridLayoutComponent,
-    VendorClientRelationItemComponent,
     VendorProductRelationItemComponent,
-    VendorCommunityRelationItemComponent,
-    ClientProductRelationItemComponent,
     SuccessStoryProductRelationItemComponent,
     SuccessStoryVendorRelationItemComponent,
     SuccessStoryClientRelationItemComponent,
     VendorSuccessstoryRelationItemComponent,
     VendorProductRelationCreateItemComponent,
-    VendorSuccessstoryRelationCreateItemComponent
+    VendorSuccessstoryRelationCreateItemComponent,
+    LoginComponent,
+    RegistrationComponent,
+    SnackbarComponent,
+    ClientSuccessstoryRelationCreateItemComponent,
+    ClientSuccessstoryRelationItemComponent,
+    SuccessstoryClientRelationItemComponent,
+    SuccessstoryVendorRelationItemComponent,
+    SuccessstoryVendorRelationCreateItemComponent,
+    SuccessstoryClientRelationCreateItemComponent,
+    SuccessstoryProductRelationItemComponent,
+    SuccessstoryProductRelationCreateItemComponent,
+    ProductVendorRelationItemComponent,
+    ProductVendorRelationCreateItemComponent,
+    ProductSuccessstoryRelationCreateItemComponent,
+    ProductSuccessstoryRelationItemComponent,
+    CreateNewComponent
 
   ],
   imports: [
@@ -116,7 +142,13 @@ import { VendorSuccessstoryRelationCreateItemComponent } from './model/vendor/ve
     GridComponent,
     DetailComponent,
     VendorProductRelationCreateItemComponent,
-    VendorSuccessstoryRelationCreateItemComponent
+    VendorSuccessstoryRelationCreateItemComponent,
+    ClientSuccessstoryRelationCreateItemComponent,
+    ProductSuccessstoryRelationCreateItemComponent,
+    ProductVendorRelationCreateItemComponent,
+    SuccessstoryClientRelationCreateItemComponent,
+    SuccessstoryProductRelationCreateItemComponent,
+    SuccessstoryVendorRelationCreateItemComponent
   ]
 })
 export class ViewModule {}

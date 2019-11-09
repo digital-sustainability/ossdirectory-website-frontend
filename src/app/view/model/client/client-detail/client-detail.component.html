@@ -1,7 +1,14 @@
 <app-default-detail>
-  <app-drop-down-grid detail-relations>
+  <div detail-relations>
 
-    <!-- Insert app-client-product-relation-item here with ng-container ngfor -->
-    <!-- <app-client-product-relation-item *ngFor="let product of products"></app-client-product-relation-item> -->
-  </app-drop-down-grid>
+    <app-drop-down-grid>
+      <h2 drop-down-grid-header>Success Stories</h2>
+      <div fxLayout="row wrap" fxLayoutGap="40px" drop-down-grid-items>
+        <app-add-relationship (onAccept)="addSuccessStory($event)"
+                              [component]="clientSuccessStory"></app-add-relationship>
+        <app-client-successstory-relation-item class="relation-item" *ngFor="let successStory of successStories"
+                                               [successStory]="successStory"></app-client-successstory-relation-item>
+      </div>
+    </app-drop-down-grid>
+  </div>
 </app-default-detail>
