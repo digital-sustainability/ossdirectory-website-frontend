@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropDownGridComponent implements OnInit {
 
+  expansionPanelOpen = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleExpansionPanel() {
+    this.expansionPanelOpen = !this.expansionPanelOpen;
   }
 
 }

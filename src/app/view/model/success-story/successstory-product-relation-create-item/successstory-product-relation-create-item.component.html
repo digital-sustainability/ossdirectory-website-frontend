@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>This is a Dialog title</h2>
+
+<mat-dialog-content>
+
+  <mat-form-field>
+    <input type="text" matInput [(ngModel)]="newProduct" [matAutocomplete]="auto">
+    <mat-label>Product</mat-label>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let product of allProducts" [value]="product">{{product.translation[0].title}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" mat-button (click)="addProduct()">Add</button>
+  <button class="mat-raised-button" mat-button (click)="close()">Close</button>
+</mat-dialog-actions>

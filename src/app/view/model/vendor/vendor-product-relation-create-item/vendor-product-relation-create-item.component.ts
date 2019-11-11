@@ -1,9 +1,8 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import {ConfigService} from "../../../../config/services/config.service";
-import {ApolloService} from "../../../../data/services/apollo.service";
-import gql from "graphql-tag";
-import {MatDialog} from "@angular/material";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
+import {ConfigService} from '../../../../config/services/config.service';
+import {ApolloService} from '../../../../data/services/apollo.service';
+import gql from 'graphql-tag';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 const allProductsQuery = () => gql`
   query AllProductsQuery($vendorSequence : String!) {
@@ -45,7 +44,7 @@ export class VendorProductRelationCreateItemComponent implements OnInit {
   ngOnInit() {
     this.apollo.sendQuery(allProductsQuery(), {vendorSequence : this.vendorSequence}).subscribe(res => {
       this.allProducts = res.data['Product'];
-      console.log(this.allProducts)
+      console.log(this.allProducts);
     });
   }
 
