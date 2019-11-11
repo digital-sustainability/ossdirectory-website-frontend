@@ -1,8 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {ConfigService} from "../../../../config/services/config.service";
-import {ApolloService} from "../../../../data/services/apollo.service";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
-import gql from "graphql-tag";
+import {ConfigService} from '../../../../config/services/config.service';
+import {ApolloService} from '../../../../data/services/apollo.service';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import gql from 'graphql-tag';
 
 const allSuccessStoriesQuery = () => gql`
   query AllSuccessStoriesQuery {
@@ -44,7 +44,7 @@ export class VendorSuccessstoryRelationCreateItemComponent implements OnInit {
   ngOnInit() {
     this.apollo.sendQuery(allSuccessStoriesQuery(), {vendorSequence : this.vendorSequence}).subscribe(res => {
       this.allSuccessStories = res.data['SuccessStory'];
-      console.log(this.allSuccessStories)
+      console.log(this.allSuccessStories);
     });
   }
 

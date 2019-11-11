@@ -4,6 +4,14 @@ import { ActivatedRoute } from '@angular/router';
 import { mergeMap, tap, switchMap } from 'rxjs/operators';
 import { pipe, combineLatest } from 'rxjs';
 import { ConfigService } from '../../config/services/config.service';
+import gql from 'graphql-tag';
+
+const CreateQuery = (type) => gql`  mutation createModel{
+    Create${type} {
+        sequence
+    }
+}
+`;
 
 @Component({
   selector: 'app-detail',
@@ -13,18 +21,18 @@ import { ConfigService } from '../../config/services/config.service';
 export class DetailComponent {
   public type;
 
- 
+
   constructor(
-    private apollo : ApolloService,
-    private config : ConfigService,
+    private apollo: ApolloService,
+    private config: ConfigService,
   ) {
-    const sequence = this.config.get("sequence");
-    const obs = this.apollo.getType(sequence).subscribe( type => {
+    const sequence = this.config.get('sequence');
+    const obs = this.apollo.getType(sequence).subscribe(type => {
       this.type = type;
     });
 
     // obs.subscribe(); //automatically sets type in config service
 
   }
-  
+
 }
