@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { HttpLink } from "apollo-angular-link-http";
 import { environment } from "../../environments/environment";
+import { OnErrorService } from "./on-error.service";
+import { ApolloLink } from "apollo-link";
 
 
 const uri = environment.graphqlURL;
@@ -14,6 +16,7 @@ export class ApolloOptionsService {
 
   constructor(
       private httpLink: HttpLink,
+      private onErrorService: OnErrorService,
   ) { }
 
   public websocket() {
@@ -80,7 +83,10 @@ export class ApolloOptionsService {
 
   public createOptions() {
 
-    const link = this.link();
+    let link: ApolloLink = this.link();
+    const onError = this.onErrorService.unauthorizedRetry();
+    link = link.concat(onError);
+
     const cache = this.cache();
     const headers = this.headers();
 
