@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MaterialDesignModule } from './material-design/material-design.module';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './view/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './view/navbar/navbar.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
