@@ -10,34 +10,26 @@
     <mat-icon>person</mat-icon>
     </div>
     <div fxLayout="row">
-      <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
-      <a mat-button routerLink="/register" routerLinkActive="active">Register</a>
-      <a mat-button routerLink="/create" routerLinkActive="active">Create</a>
+      <a mat-button routerLink="/login" routerLinkActive="active">{{ 'LOGIN' | translate }}</a>
+      <a mat-button routerLink="/register" routerLinkActive="active">{{ 'REGISTER' | translate }}</a>
+      <a mat-button routerLink="/create" routerLinkActive="active">{{ 'CREATE' | translate }}</a>
     </div>
   </div>
 
-  <!--<div class="toolbar-menu" fxFlex="1 1 auto" fxShow.gt-sm>
-    <a mat-button routerLink="/">Home</a>
-    <mat-divider [vertical]="true"></mat-divider>
-    <a mat-button routerLink="/content/vendor">Vendors</a>
-    <mat-divider [vertical]="true"></mat-divider>
-    <a mat-button routerLink="/content/client">Clients</a>
-    <mat-divider [vertical]="true"></mat-divider>
-    <a mat-button routerLink="/content/community">Communities</a>
-    <mat-divider [vertical]="true"></mat-divider>
-    <a mat-button routerLink="/content/product">Products</a>
-    <mat-divider [vertical]="true"></mat-divider>
-    <a mat-button routerLink="/content/successstory">Success Stories</a>
-  </div>-->
-
-  <!--<button fxShow.gt-sm class="user-menu-button" mat-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon></button>
-
-  <mat-menu fxLayout="column" #menu="matMenu">
-    <a *ngIf="!authenticated" mat-button routerLink="/login" routerLinkActive="active">Login</a>
-    <a *ngIf="!authenticated" mat-button routerLink="/register" routerLinkActive="active">Register</a>
-    <a *ngIf="authenticated" mat-button routerLink="/user/edit" routerLinkActive="active">Edit user</a>
-    <a *ngIf="authenticated" mat-button (click)="logout()">Logout</a>
-  </mat-menu>-->
+  <ul id="lang-nav">
+    <li><a
+      (click)="onLangChange('de');"
+      [ngClass]="selectedLang==='de' ? 'active' : 'not-active'"
+      lang="de"
+      title="Deutsch"
+      aria-label="Deutsch">DE</a></li>
+    <li><a
+      (click)="onLangChange('en');"
+      [ngClass]="selectedLang==='en' ? 'active' : 'not-active'"
+      lang="en"
+      title="English"
+      aria-label="English">EN</a></li>
+  </ul>
   <div id="logo-container">
     <div id="logo-background">
       <img id="logo" src="https://minio.digisus.ch/oss-directory/OSSD_Logo_rgb.svg">

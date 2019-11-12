@@ -3,7 +3,7 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { HomeComponent } from './view/home/home.component';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +18,12 @@ import { NavbarItemComponent } from './view/navbar/navbar-item/navbar-item.compo
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GraphQLModule } from './graphql/graphql.module';
 import { ViewModule } from './view/view.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -40,7 +46,14 @@ import { ViewModule } from './view/view.module';
     AuthModule,
     FlexLayoutModule,
     GraphQLModule,
-    ViewModule
+    ViewModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     MaterialDesignModule,

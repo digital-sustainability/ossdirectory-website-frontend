@@ -114,3 +114,21 @@ mat-sidenav {
   width: 35px;
   height: 35px;
 }
+
+#lang-nav {
+  list-style-type: none;
+}
+
+#lang-nav > li > a {
+  font-size: small;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#lang-nav > li > a:hover {
+  background-color: darkgray;
+}
+
+#lang-nav > li > a.active {
+  background-color: gray;
+}
