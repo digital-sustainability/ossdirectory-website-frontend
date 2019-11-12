@@ -6,6 +6,20 @@
 
       </button>
     </div>
+    <ul id="lang-nav" fxLayout="row">
+      <li><a
+        (click)="onLangChange('de');"
+        [ngClass]="selectedLang==='de' ? 'active' : 'not-active'"
+        lang="de"
+        title="Deutsch"
+        aria-label="Deutsch">DE</a></li>
+      <li><a
+        (click)="onLangChange('en');"
+        [ngClass]="selectedLang==='en' ? 'active' : 'not-active'"
+        lang="en"
+        title="English"
+        aria-label="English">EN</a></li>
+    </ul>
     <div id="user-icon">
     <mat-icon>person</mat-icon>
     </div>
@@ -16,20 +30,6 @@
     </div>
   </div>
 
-  <ul id="lang-nav">
-    <li><a
-      (click)="onLangChange('de');"
-      [ngClass]="selectedLang==='de' ? 'active' : 'not-active'"
-      lang="de"
-      title="Deutsch"
-      aria-label="Deutsch">DE</a></li>
-    <li><a
-      (click)="onLangChange('en');"
-      [ngClass]="selectedLang==='en' ? 'active' : 'not-active'"
-      lang="en"
-      title="English"
-      aria-label="English">EN</a></li>
-  </ul>
   <div id="logo-container">
     <div id="logo-background">
       <img id="logo" src="https://minio.digisus.ch/oss-directory/OSSD_Logo_rgb.svg">

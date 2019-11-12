@@ -117,6 +117,7 @@ mat-sidenav {
 
 #lang-nav {
   list-style-type: none;
+  padding-right: 20px;
 }
 
 #lang-nav > li > a {
@@ -126,9 +127,9 @@ mat-sidenav {
 }
 
 #lang-nav > li > a:hover {
-  background-color: darkgray;
+  background-color: darkgrey;
 }
 
 #lang-nav > li > a.active {
-  background-color: gray;
+  background-color: black;
 }
