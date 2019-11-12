@@ -4,7 +4,7 @@
       <h2 drop-down-grid-header>Client</h2>
       <div fxLayout="row wrap" fxLayoutGap="40px" drop-down-grid-items>
         <app-add-relationship (onAccept)="addClient($event)" [component]="successStoryClient"></app-add-relationship>
-        <app-successstory-client-relation-item class="relation-item"
+        <app-successstory-client-relation-item *ngIf="client" class="relation-item"
                                           [client]="client"></app-successstory-client-relation-item>
       </div>
     </app-drop-down-grid>
@@ -12,7 +12,7 @@
       <h2 drop-down-grid-header>Vendor</h2>
       <div fxLayout="row wrap" fxLayoutGap="40px" drop-down-grid-items>
         <app-add-relationship (onAccept)="addVendor($event)" [component]="successStoryVendor"></app-add-relationship>
-        <app-successstory-vendor-relation-item class="relation-item"
+        <app-successstory-vendor-relation-item *ngIf="vendor" class="relation-item"
                                           [vendor]="vendor"></app-successstory-vendor-relation-item>
       </div>
     </app-drop-down-grid>

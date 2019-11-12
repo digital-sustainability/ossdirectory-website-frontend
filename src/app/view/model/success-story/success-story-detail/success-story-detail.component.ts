@@ -105,9 +105,9 @@ export class SuccessStoryDetailComponent implements OnInit {
 
     const query = successStoryQuery(this.type, this.sequence);
     this.apollo.sendQuery(query).subscribe(res => {
+      console.log(res)
       this.products = res.data[this.type][0].products;
       this.client = res.data[this.type][0].client;
-      console.log(res.data)
       this.vendor = res.data[this.type][0].vendor;
     });
   }
