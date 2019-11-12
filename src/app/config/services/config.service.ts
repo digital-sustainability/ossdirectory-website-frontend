@@ -32,10 +32,4 @@ export class ConfigService {
     return this.subject;
   }
 
-  public getTranslationType(type) {
-    console.log(type)
-    return ['Client', 'Vendor', 'Community', 'Organisation'].indexOf(type) > -1 ? 'Organisation' : type;
-  }
-
-
 }

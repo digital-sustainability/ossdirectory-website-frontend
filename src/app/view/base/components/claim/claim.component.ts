@@ -61,7 +61,7 @@ export class ClaimComponent implements OnInit {
   }
 
   update() {
-    this.apollo.sendUpdateQuery(claimUpdateQuery(this.config.getTranslationType(this.type)), { sequence : this.item.sequence, claim : this.item.claim }).subscribe(({ data }) => {
+    this.apollo.sendUpdateQuery(claimUpdateQuery(this.type), { sequence : this.item.sequence, claim : this.item.claim }).subscribe(({ data }) => {
       console.log(data);
     },(error) => {
       console.log('there was an error sending the query', error);

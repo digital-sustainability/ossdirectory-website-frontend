@@ -63,7 +63,7 @@ export class DescriptionComponent implements OnInit {
   }
 
   update() {
-    this.apollo.sendUpdateQuery(descriptionUpdateQuery(this.config.getTranslationType(this.type)), { sequence : this.item.sequence, description : this.item.description }).subscribe(({ data }) => {
+    this.apollo.sendUpdateQuery(descriptionUpdateQuery(this.type), { sequence : this.item.sequence, description : this.item.description }).subscribe(({ data }) => {
       console.log(data);
     },(error) => {
       console.log('there was an error sending the query', error);

@@ -58,7 +58,7 @@ export class TitleComponent implements OnInit {
   }
 
   update() {
-    this.apollo.sendUpdateQuery(titleUpdateQuery(this.config.getTranslationType(this.type)), { sequence : this.item.sequence, title : this.item.title }).subscribe(({ data }) => {
+    this.apollo.sendUpdateQuery(titleUpdateQuery(this.type), { sequence : this.item.sequence, title : this.item.title }).subscribe(({ data }) => {
       console.log(data);
     },(error) => {
       console.log('there was an error sending the query', error);
