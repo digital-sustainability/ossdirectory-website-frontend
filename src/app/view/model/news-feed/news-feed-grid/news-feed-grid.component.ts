@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../../../../environments/environment";
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../../../environments/environment';
+import { RssFeedService } from '../../../../data/services/rss-feed.service';
 
 @Component({
   selector: 'app-news-feed-grid',
@@ -12,14 +13,14 @@ export class NewsFeedGridComponent implements OnInit {
   public newsfeed;
 
   constructor(
-    private http : HttpClient
+    private http: HttpClient,
+    private rssFeed: RssFeedService
   ) { }
 
   ngOnInit() {
-    this.http.get(environment.apiURL + 'api/get-rss-feed').subscribe(feed => {
+    this.rssFeed.getRssFeed().subscribe(feed => {
       this.newsfeed = feed;
-      console.log(feed)
-    })
+    });
   }
 
 }

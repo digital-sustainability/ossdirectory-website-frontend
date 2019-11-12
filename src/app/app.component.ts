@@ -20,11 +20,11 @@ export class AppComponent {
     { name: 'Products', url: '/content/product' },
     { name: 'Success Stories', url: '/content/successstory' },
     { name: 'News Feed', url: '/content/newsfeed' },
-    { name: 'Top News', url: '/content/topnews' },
+    /*{ name: 'Top News', url: '/content/topnews' },
     { name: 'Events', url: '/content/event' },
     { name: 'Login', url: '/login' },
     { name: 'Register', url: '/register' },
-    { name: 'Create New', url: '/create' }
+    { name: 'Create New', url: '/create' }*/
   ];
   selectedItem = this.navbarItems[0];
 
