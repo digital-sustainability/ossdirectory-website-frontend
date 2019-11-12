@@ -64,6 +64,9 @@ import { ProductVendorRelationCreateItemComponent } from './model/product/produc
 import { ProductSuccessstoryRelationCreateItemComponent } from './model/product/product-successstory-relation-create-item/product-successstory-relation-create-item.component';
 import { ProductSuccessstoryRelationItemComponent } from './model/product/product-successstory-relation-item/product-successstory-relation-item.component';
 import { CreateNewComponent } from './create-new/create-new.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpLoaderFactory } from '../app.module';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -132,7 +135,14 @@ import { CreateNewComponent } from './create-new/create-new.component';
     FlexLayoutModule,
     MaterialDesignModule,
     NgxFileDropModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     RouterModule,

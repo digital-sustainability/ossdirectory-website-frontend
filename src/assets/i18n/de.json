@@ -12,5 +12,7 @@
   "PRODUCT_PLURAL": "Produkte",
   "SUCCESSSTORY": "Success Story",
   "SUCCESSSTORY_PLURAL": "Success Stories",
-  "NEWSFEED": "News Feed"
+  "NEWSFEED": "News Feed",
+  "SEARCH": "Suchen",
+  "SEARCHSTRING": "Suchbegriff"
 }
