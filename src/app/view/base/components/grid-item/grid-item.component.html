@@ -10,7 +10,10 @@
   <div class="grid-item-border">
     <div *ngIf="item.sequence" class="grid-item-overlay"
          routerLink="/hier-kommt-spezifischer-text/{{item.sequence}}/oder-auch-hier/bald-auch-ganz-dynamisch">
-      <img *ngIf="item.imageUrl" [src]="item.imageUrl">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img *ngIf="item.imageUrl" [src]="item.imageUrl">
+        <p>{{item.translations[0].title}}</p>
+      </div>
     </div>
   </div>
 </div>

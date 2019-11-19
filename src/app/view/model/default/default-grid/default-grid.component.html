@@ -2,12 +2,12 @@
   <div grid-top>
   <h1>{{type}}</h1>
     <mat-form-field>
-      <input type="text" class="search" placeholder="Search" matInput [(ngModel)]="searchString">
+      <input type="text" class="search" placeholder="{{'SEARCHSTRING' | translate }}" matInput [(ngModel)]="searchString">
       <!--<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
         <mat-option *ngFor="let item of items" [value]="item">{{item}}</mat-option>
       </mat-autocomplete>-->
     </mat-form-field>
-    <a class="mat-button" (click)="updateGrid()">Search</a>
+    <a class="mat-button" (click)="updateGrid()">{{'SEARCH' | translate }}</a>
   </div>
 
   <div grid-mid fxLayout="row wrap" fxLayoutGap="40px">

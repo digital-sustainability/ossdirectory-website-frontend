@@ -1,4 +1,14 @@
-<app-default-detail>
+<app-detail-layout>
+
+  <app-image detail-nw></app-image>
+
+  <app-title detail-ne-mid></app-title>
+  <app-claim detail-ne-bot></app-claim>
+
+  <app-description detail-se></app-description>
+
+  <app-stats detail-se></app-stats>
+
   <div detail-relations>
     <app-drop-down-grid>
       <h2 drop-down-grid-header>Vendors</h2>
@@ -14,8 +24,9 @@
         <app-add-relationship (onAccept)="addSuccessStory($event)"
                               [component]="productSuccessStory"></app-add-relationship>
         <app-product-successstory-relation-item class="relation-item" *ngFor="let successStory of successStories"
-                                               [successStory]="successStory"></app-product-successstory-relation-item>
+                                                [successStory]="successStory"></app-product-successstory-relation-item>
       </div>
     </app-drop-down-grid>
   </div>
-</app-default-detail>
+
+</app-detail-layout>

@@ -2,6 +2,7 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 import {MatDialog} from "@angular/material";
 import {VendorProductRelationCreateItemComponent} from "../../../model/vendor/vendor-product-relation-create-item/vendor-product-relation-create-item.component";
 import {ComponentType} from "@angular/cdk/typings/portal";
+import { EditableService } from '../../../../auth/services/editable.service';
 
 @Component({
   selector: 'app-add-relationship',
@@ -14,10 +15,14 @@ export class AddRelationshipComponent implements OnInit {
   @Input() component : ComponentType<any>;
 
   public item;
+  public canEdit;
 
   constructor(
-    public dialog: MatDialog
-  ) {}
+    public dialog: MatDialog,
+    public editable: EditableService
+  ) {
+    this.canEdit = this.editable.isEditable();
+  }
 
   ngOnInit() {
   }

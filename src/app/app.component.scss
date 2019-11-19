@@ -96,3 +96,40 @@ mat-sidenav {
   transform: skew(45deg);
   z-index: -1;
 }
+
+#user-icon {
+  background-color: #fff;
+  color: black;
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#user-icon mat-icon {
+  font-size: 35px;
+  width: 35px;
+  height: 35px;
+}
+
+#lang-nav {
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+#lang-nav > li > a {
+  font-size: small;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#lang-nav > li > a:hover {
+  background-color: darkgrey;
+}
+
+#lang-nav > li > a.active {
+  background-color: black;
+}

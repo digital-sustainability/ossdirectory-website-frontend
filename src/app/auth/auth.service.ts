@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApolloService } from "../data/services/apollo.service";
 import gql from "graphql-tag";
 import { Router } from "@angular/router";
+import { EditableService } from './services/editable.service';
 
 const loginQuery = gql`
     query login($email: String!, $password: String!){
@@ -31,6 +32,7 @@ export class AuthService {
   constructor(
       private apollo: ApolloService,
       private router: Router,
+      private editable: EditableService
   ) { }
 
   public login(email: string, password: string) {
@@ -38,6 +40,7 @@ export class AuthService {
         loginQuery,
         { email, password })
         .subscribe((res) => {
+           this.editable.authenticateUser();
            this.router.navigate([this.redirectUrl || '/']);
            this.redirectUrl = null;
         });
@@ -50,6 +53,10 @@ export class AuthService {
         .subscribe((res) => {
             this.router.navigate(['/login']);
         });
+  }
+
+  public isAuthenticated() {
+    return this.editable.isEditable();
   }
 
 

@@ -2,7 +2,7 @@
   <div class="community-badge" *ngFor="let community of items">
     <img src="http://minio.digisus.ch/oss-directory/{{community.Community.imageUrl}}">
   </div>
-  <div (click)="toggleAddNew()" class="add-community-badge">
+  <div *ngIf="canEdit" (click)="toggleAddNew()" class="add-community-badge">
     <mat-icon>add</mat-icon>
   </div>
   <div *ngIf="addNew" class="add-community-badge-input">

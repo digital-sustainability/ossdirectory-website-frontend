@@ -1,6 +1,6 @@
 <ckeditor *ngIf="item"
           (focusout)="update()"
-          [disabled]="isViewOnly"
+          [disabled]="!canEdit"
           [(ngModel)]="item.description"
           [config]="{ placeholder : 'description', toolbar: [ 'heading', '|', 'bold', 'italic' ], width: '100' }"
           [editor]="Editor">

@@ -1,0 +1,18 @@
+{
+  "TITLE": "OSS Directory",
+  "HOME": "Startseite",
+  "LOGIN": "Einloggen",
+  "REGISTER": "Registrieren",
+  "CREATE": "Erstellen",
+  "VENDOR": "Anbieter",
+  "VENDOR_PLURAL": "Anbieter",
+  "CLIENT": "Kunde",
+  "CLIENT_PLURAL": "Kunden",
+  "PRODUCT": "Produkt",
+  "PRODUCT_PLURAL": "Produkte",
+  "SUCCESSSTORY": "Success Story",
+  "SUCCESSSTORY_PLURAL": "Success Stories",
+  "NEWSFEED": "News Feed",
+  "SEARCH": "Suchen",
+  "SEARCHSTRING": "Suchbegriff"
+}

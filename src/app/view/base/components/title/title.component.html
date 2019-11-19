@@ -1,3 +1,3 @@
 <div *ngIf="item" class="detail-form-input">
-  <input (focusout)="update()" class="title" type="text" [(ngModel)]="item.title" placeholder="title">
+  <input (focusout)="update()" class="title" type="text" [disabled]="!canEdit" [(ngModel)]="item.title" placeholder="title">
 </div>

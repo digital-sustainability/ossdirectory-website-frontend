@@ -1,8 +1,10 @@
 export class Config {
 
-  language : string = "de";
-  type : string;
-  sequence : string;
-  first : number = 20;
-  offset : number = 0;
+  language = 'de';
+  type: string;
+  sequence: string;
+  searchString: string;
+  first = 20;
+  offset = 0;
+  authenticated = false;
 }

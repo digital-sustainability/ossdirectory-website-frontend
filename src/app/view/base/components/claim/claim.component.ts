@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import {Observable} from "rxjs";
 import {ConfigService} from "../../../../config/services/config.service";
 import {ApolloService} from "../../../../data/services/apollo.service";
+import { EditableService } from '../../../../auth/services/editable.service';
 
 const claimQuery = (type, sequence) => gql`
   query ClaimQuery {
@@ -39,13 +40,16 @@ export class ClaimComponent implements OnInit {
   private type;
   private sequence;
   public item;
+  public canEdit = false;
 
   constructor(
     public config : ConfigService,
     public apollo : ApolloService,
+    public editable : EditableService
   ) {
     this.type = config.get("type");
     this.sequence = config.get("sequence");
+    this.canEdit = this.editable.isEditable();
 
 
     const query = claimQuery(this.type, this.sequence);
@@ -61,7 +65,7 @@ export class ClaimComponent implements OnInit {
   }
 
   update() {
-    this.apollo.sendUpdateQuery(claimUpdateQuery(this.config.getTranslationType(this.type)), { sequence : this.item.sequence, claim : this.item.claim }).subscribe(({ data }) => {
+    this.apollo.sendUpdateQuery(claimUpdateQuery(this.type), { sequence : this.item.sequence, claim : this.item.claim }).subscribe(({ data }) => {
       console.log(data);
     },(error) => {
       console.log('there was an error sending the query', error);

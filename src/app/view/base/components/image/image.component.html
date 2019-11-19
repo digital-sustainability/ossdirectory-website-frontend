@@ -2,7 +2,7 @@
   <div class="title-img">
     <img src="{{item.url}}" (load)="imageLoaded($event)">
   </div>
-  <div class="upload">
+  <div *ngIf="!canEdit" class="upload">
     <app-image-uploader></app-image-uploader>
   </div>
 </div>
