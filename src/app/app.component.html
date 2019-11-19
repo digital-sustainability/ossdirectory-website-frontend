@@ -20,7 +20,7 @@
         title="English"
         aria-label="English">EN</a></li>
     </ul>
-    <div id="user-icon">
+    <div *ngIf="isAuthenticated" id="user-icon">
     <mat-icon>person</mat-icon>
     </div>
     <div fxLayout="row">
@@ -46,28 +46,6 @@
         <!--<app-navbar-item [label]="'Home'" [url]="'/'"></app-navbar-item>-->
         <app-navbar-item *ngFor="let item of navbarItems" (activate)="activateLink(item)" [item]="item"
                          [active]="selectedItem === item"></app-navbar-item>
-        <!--<a mat-button routerLink="/"><img src="https://minio.digisus.ch/oss-directory/oss-arrow.svg" height="20px"> Home</a>
-        <mat-divider></mat-divider>
-        <a mat-button routerLink="/content/vendor">Vendors</a>
-        <mat-divider></mat-divider>
-        <a mat-button routerLink="/content/client">Clients</a>
-        <mat-divider></mat-divider>
-        <a mat-button routerLink="/content/product">Products</a>
-        <mat-divider></mat-divider>
-        <a mat-button routerLink="/content/successstory">Success Stories</a>
-        <mat-divider></mat-divider>
-        <a mat-button routerLink="/content/newsfeed">News Feed</a>
-        <mat-divider></mat-divider>
-        <a mat-button routerLink="/content/topnews">Top News</a>
-        <mat-divider></mat-divider>
-        <a mat-button routerLink="/content/event">Events</a>
-        <mat-divider></mat-divider>
-        <a *ngIf="!authenticated" mat-button routerLink="/login" routerLinkActive="active">Login</a>
-        <mat-divider></mat-divider>
-        <a *ngIf="!authenticated" mat-button routerLink="/register" routerLinkActive="active">Register</a>
-        <mat-divider></mat-divider>
-        <a *ngIf="authenticated" mat-button routerLink="/user/edit" routerLinkActive="active">Edit user</a>
-        <a *ngIf="authenticated" mat-button (click)="logout()">Logout</a>-->
       </div>
     </mat-sidenav>
 

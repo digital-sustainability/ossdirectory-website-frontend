@@ -15,9 +15,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
   constructor(
       public config : ConfigService,
-    ){
-        console.log(config.get("sequence"), config.get("type"));
-    }
+    ){}
 
   ngOnInit() {
     //   const subject = this.config.getSubject();
