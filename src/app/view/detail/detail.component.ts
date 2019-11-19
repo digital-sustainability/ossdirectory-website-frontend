@@ -5,6 +5,7 @@ import { mergeMap, tap, switchMap } from 'rxjs/operators';
 import { pipe, combineLatest } from 'rxjs';
 import { ConfigService } from '../../config/services/config.service';
 import gql from 'graphql-tag';
+import { RouteService } from "../../route/services/route.service";
 
 const CreateQuery = (type) => gql`  mutation createModel{
     Create${type} {
@@ -18,13 +19,14 @@ const CreateQuery = (type) => gql`  mutation createModel{
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
 })
-export class DetailComponent {
+export class DetailComponent implements OnInit {
   public type;
 
 
   constructor(
     private apollo: ApolloService,
     private config: ConfigService,
+    private route: RouteService,
   ) {
     const sequence = this.config.get('sequence');
     const obs = this.apollo.getType(sequence).subscribe(type => {
@@ -32,6 +34,19 @@ export class DetailComponent {
     });
 
     // obs.subscribe(); //automatically sets type in config service
+  }
+
+  ngOnInit() {
+
+    const events = this.route.events();
+    events.subscribe(() => {
+        this.ngOnInit();
+    });
+
+
+  }
+
+  private reload() {
 
   }
 

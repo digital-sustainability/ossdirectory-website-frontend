@@ -5,6 +5,8 @@ import {ConfigService} from "../../../../config/services/config.service";
 import {ApolloService} from "../../../../data/services/apollo.service";
 import {map} from "rxjs/operators";
 
+
+//TODO: go for uid
 const imageQuery = (type, sequence) => gql`
   query ImageQuery {
     ${type}( sequence : "${sequence}" ) {
@@ -55,16 +57,20 @@ export class ImageComponent implements OnInit {
       const re = /(?:\.([^.]+))?$/;
       const ending = re.exec(this.item.imageUrl)[1];
       this.item.url = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${this.item.sequence}.${ending}`;
-      console.log(this.item)
     });
   }
 
   uploadImage() {
-    this.apollo.sendUpdateQuery(imageUpdateQuery(this.type), { sequence : this.item.sequence, imageUrl : this.item.imageUrl }).subscribe(({ data }) => {
-      console.log(data);
-    },(error) => {
+    this.apollo.sendUpdateQuery(
+        imageUpdateQuery(this.type), 
+        { sequence : this.item.sequence, imageUrl : this.item.imageUrl })
+    .subscribe(({ data }) => {
+    }, (error) => {
       console.log('there was an error sending the query', error);
     });
   }
 
+  imageLoaded($event) {
+    console.log("imageloaded", $event);
+  }
 }

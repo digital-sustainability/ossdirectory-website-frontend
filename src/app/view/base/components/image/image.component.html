@@ -1,6 +1,6 @@
 <div *ngIf="item" class="img-container">
   <div class="title-img">
-    <img src="{{item.url}}">
+    <img src="{{item.url}}" (load)="imageLoaded($event)">
   </div>
   <div class="upload">
     <app-image-uploader></app-image-uploader>
