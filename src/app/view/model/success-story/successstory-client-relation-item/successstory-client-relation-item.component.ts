@@ -13,7 +13,7 @@ export class SuccessstoryClientRelationItemComponent implements OnInit {
 
   ngOnInit() {
     const re = /(?:\.([^.]+))?$/;
-    const ending = re.exec(this.client.imageUrl)[1];
+    const ending = re.exec(this.client.logo)[1];
     this.client.imageUrl = `http://minio.digisus.ch/oss-directory/client_${this.client.uid}.${ending}`;
   }
 

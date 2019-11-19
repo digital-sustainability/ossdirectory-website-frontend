@@ -10,8 +10,10 @@ const clientQuery = (type, sequence) => gql`
     Client( sequence : "${sequence}" ) {
       successStories {
         sequence
+        uid
         __typename
         imageUrl
+        logo
         translations {
           title
           description

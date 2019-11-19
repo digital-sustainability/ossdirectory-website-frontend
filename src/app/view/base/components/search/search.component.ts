@@ -44,7 +44,7 @@ export class SearchComponent implements OnInit {
         this.items = result.data.list.filter(r => r.translations.length > 0);
         this.items.map((value) => {
 
-          const ending = re.exec(value.imageUrl)[1];
+          const ending = re.exec(value.logo)[1];
           if (this.type === Modeltype.SuccessStory) this.type = "success_story";
           value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.uid}.${ending}`
 
@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
         this.items = result.data.list.filter(r => r.translations.length > 0);
         this.items.map((value) => {
 
-          const ending = re.exec(value.imageUrl)[1];
+          const ending = re.exec(value.logo)[1];
           if (this.type === Modeltype.SuccessStory) this.type = "success_story";
           value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.uid}.${ending}`
 

@@ -11,7 +11,9 @@
     <div *ngIf="item.sequence" class="grid-item-overlay"
          routerLink="/hier-kommt-spezifischer-text/{{item.sequence}}/oder-auch-hier/bald-auch-ganz-dynamisch">
       <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="image-wrapper">
         <img *ngIf="item.imageUrl" [src]="item.imageUrl">
+        </div>
         <p>{{item.translations[0].title}}</p>
       </div>
     </div>

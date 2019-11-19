@@ -12,8 +12,10 @@ const successStoryQuery = (type, sequence) => gql`
     SuccessStory( sequence : "${sequence}" ) {
       client {
         sequence
+        uid
         __typename
         imageUrl
+        logo
         translations {
           title
           description
@@ -21,8 +23,10 @@ const successStoryQuery = (type, sequence) => gql`
       }
       vendor {
         sequence
+        uid
         __typename
         imageUrl
+        logo
         translations {
           title
           description
@@ -30,8 +34,10 @@ const successStoryQuery = (type, sequence) => gql`
       }
       products {
         sequence
+        uid
         __typename
         imageUrl
+        logo
         translations {
           title
           description

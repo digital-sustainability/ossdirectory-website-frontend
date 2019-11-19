@@ -13,7 +13,7 @@ export class VendorProductRelationItemComponent implements OnInit {
 
   ngOnInit() {
     const re = /(?:\.([^.]+))?$/;
-    const ending = re.exec(this.product.imageUrl)[1];
+    const ending = re.exec(this.product.logo)[1];
     this.product.imageUrl = `http://minio.digisus.ch/oss-directory/product_${this.product.uid}.${ending}`
   }
 

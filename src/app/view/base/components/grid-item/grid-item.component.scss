@@ -17,8 +17,9 @@
   height: 198px;
 }
 
-.grid-item-overlay img {
-  width:100%;
+.image-wrapper, .image-wrapper img {
+  max-width:100%;
+  height: auto;
 }
 
 :host ::ng-deep .relation-item .grid-item-border {

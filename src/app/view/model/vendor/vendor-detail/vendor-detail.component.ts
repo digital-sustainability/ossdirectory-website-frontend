@@ -11,8 +11,10 @@ const vendorQuery = (type, sequence) => gql`
     Vendor( sequence : "${sequence}" ) {
       successStories {
         sequence
+        uid
         __typename
         imageUrl
+        logo
         translations {
           title
           description
@@ -21,8 +23,10 @@ const vendorQuery = (type, sequence) => gql`
       products {
         Product {
           sequence
+          uid
           __typename
           imageUrl
+          logo
           translations {
             title
             description

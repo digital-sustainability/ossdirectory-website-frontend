@@ -11,8 +11,10 @@ const productQuery = (type, sequence) => gql`
     Product( sequence : "${sequence}" ) {
       successStories {
         sequence
+        uid
         __typename
         imageUrl
+        logo
         translations {
           title
           description
@@ -21,8 +23,10 @@ const productQuery = (type, sequence) => gql`
       vendors {
         Vendor {
           sequence
+          uid
           __typename
           imageUrl
+          logo
           translations {
             title
             description
@@ -85,6 +89,7 @@ export class ProductDetailComponent implements OnInit {
     const query = productQuery(this.type, this.sequence);
     this.apollo.sendQuery(query).subscribe(res => {
       this.vendors = res.data[this.type][0].vendors;
+      console.log(this.vendors)
       this.successStories = res.data[this.type][0].successStories;
     });
   }
