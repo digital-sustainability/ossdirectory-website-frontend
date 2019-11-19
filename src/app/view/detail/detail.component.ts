@@ -27,23 +27,19 @@ export class DetailComponent implements OnInit {
     private apollo: ApolloService,
     private config: ConfigService,
     private route: RouteService,
-  ) {
+  ) {}
+
+  ngOnInit() {
+
     const sequence = this.config.get('sequence');
     const obs = this.apollo.getType(sequence).subscribe(type => {
       this.type = type;
     });
 
-    // obs.subscribe(); //automatically sets type in config service
-  }
-
-  ngOnInit() {
-
     const events = this.route.events();
     events.subscribe(() => {
         this.ngOnInit();
     });
-
-
   }
 
   private reload() {
