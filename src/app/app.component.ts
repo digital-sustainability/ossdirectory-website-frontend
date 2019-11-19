@@ -57,4 +57,5 @@ export class AppComponent {
   onLangChange(lang: string): void {
     this.langService.changeLang(lang);
   }
+
 }
