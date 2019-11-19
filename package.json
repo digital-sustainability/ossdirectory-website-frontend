@@ -35,6 +35,8 @@
     "apollo-client": "^2.6.0",
     "apollo-link": "^1.2.11",
     "apollo-link-context": "^1.0.19",
+    "apollo-link-error": "^1.1.12",
+    "apollo-link-retry": "^2.2.15",
     "apollo-link-ws": "^1.0.19",
     "apollo-upload-client": "^11.0.0",
     "core-js": "^2.5.4",

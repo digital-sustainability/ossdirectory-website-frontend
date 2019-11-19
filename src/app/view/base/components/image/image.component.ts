@@ -6,6 +6,8 @@ import {ApolloService} from "../../../../data/services/apollo.service";
 import {map} from "rxjs/operators";
 import { EditableService } from '../../../../auth/services/editable.service';
 
+
+//TODO: go for uid
 const imageQuery = (type, sequence) => gql`
   query ImageQuery {
     ${type}( sequence : "${sequence}" ) {
@@ -71,4 +73,7 @@ export class ImageComponent implements OnInit {
     });
   }
 
+  imageLoaded($event) {
+    console.log("imageloaded", $event);
+  }
 }
