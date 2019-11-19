@@ -134,11 +134,10 @@ export class ApolloService {
     }).valueChanges.pipe(
       map(
         ({ data }) => {
-          console.log(data.Entry)
           this.config.set("type", data.Entry);
           return data.Entry;
         }
       )
-    )
+    );
   }
 }
