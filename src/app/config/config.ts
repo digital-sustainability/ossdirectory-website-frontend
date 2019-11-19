@@ -6,4 +6,5 @@ export class Config {
   searchString: string;
   first = 20;
   offset = 0;
+  authenticated = false;
 }

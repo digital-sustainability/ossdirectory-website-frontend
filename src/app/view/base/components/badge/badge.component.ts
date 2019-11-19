@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import {ConfigService} from '../../../../config/services/config.service';
 import {ApolloService} from '../../../../data/services/apollo.service';
 import {ApolloQueryResult} from 'apollo-client';
+import { EditableService } from '../../../../auth/services/editable.service';
 
 const communityQuery = (type, sequence) => gql`
   query CommunityQuery {
@@ -67,13 +68,16 @@ export class BadgeComponent implements OnInit {
   private allCommunities: ApolloQueryResult<any>;
   public community;
   addNew = false;
+  canEdit = false;
 
   constructor(
     public config: ConfigService,
     public apollo: ApolloService,
+    public editable: EditableService
   ) {
     this.type = config.get('type');
     this.sequence = config.get('sequence');
+    this.canEdit = this.editable.isEditable();
     console.log(this.sequence);
 
     const query = communityQuery(this.type, this.sequence);

@@ -62,9 +62,10 @@
 }
 
 .detail-gradient {
-  background-image: linear-gradient(to left, #01b9ce, #451250);
+  /*background-image: linear-gradient(to left, #01b9ce, #451250);*/
+  background-color: #efefef;
   margin: 5%;
-  padding: 10px;
+  padding: 1px;
 }
 
 .detail-overlay {
