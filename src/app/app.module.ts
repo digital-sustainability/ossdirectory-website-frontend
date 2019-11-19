@@ -17,13 +17,9 @@ import { AuthModule } from './auth/auth.module';
 import { NavbarItemComponent } from './view/navbar/navbar-item/navbar-item.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GraphQLModule } from './graphql/graphql.module';
-import { ViewModule } from './view/view.module';
+import { HttpLoaderFactory, ViewModule } from './view/view.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 
 @NgModule({
   declarations: [

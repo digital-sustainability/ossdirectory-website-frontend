@@ -65,8 +65,12 @@ import { ProductSuccessstoryRelationCreateItemComponent } from './model/product/
 import { ProductSuccessstoryRelationItemComponent } from './model/product/product-successstory-relation-item/product-successstory-relation-item.component';
 import { CreateNewComponent } from './create-new/create-new.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpLoaderFactory } from '../app.module';
 import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [

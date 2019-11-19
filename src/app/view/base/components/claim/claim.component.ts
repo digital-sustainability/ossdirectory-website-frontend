@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import {Observable} from "rxjs";
 import {ConfigService} from "../../../../config/services/config.service";
 import {ApolloService} from "../../../../data/services/apollo.service";
+import { EditableService } from '../../../../auth/services/editable.service';
 
 const claimQuery = (type, sequence) => gql`
   query ClaimQuery {
@@ -39,13 +40,16 @@ export class ClaimComponent implements OnInit {
   private type;
   private sequence;
   public item;
+  public canEdit = false;
 
   constructor(
     public config : ConfigService,
     public apollo : ApolloService,
+    public editable : EditableService
   ) {
     this.type = config.get("type");
     this.sequence = config.get("sequence");
+    this.canEdit = this.editable.isEditable();
 
 
     const query = claimQuery(this.type, this.sequence);

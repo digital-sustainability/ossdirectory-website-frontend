@@ -55,5 +55,9 @@ export class AuthService {
         });
   }
 
+  public isAuthenticated() {
+    return this.editable.isEditable();
+  }
+
 
 }

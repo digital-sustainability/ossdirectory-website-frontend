@@ -4,6 +4,7 @@ import gql from "graphql-tag";
 import { Observable } from "rxjs";
 import { ConfigService } from "../../../../config/services/config.service";
 import { ApolloService } from "../../../../data/services/apollo.service";
+import { EditableService } from '../../../../auth/services/editable.service';
 
 const contactQuery = (type, sequence) => gql`
   query ContactQuery {
@@ -79,10 +80,12 @@ export class ContactComponent implements OnInit {
   private sequence;
   public item;
   public address;
+  public canEdit;
 
   constructor(
     public config: ConfigService,
     public apollo: ApolloService,
+    public editable: EditableService
   ) {
 
 
@@ -91,6 +94,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
     this.type = this.config.get("type");
     this.sequence = this.config.get("sequence");
+    this.canEdit = this.editable.isEditable();
 
     const query = contactQuery(this.type, this.sequence);
     const obs = this.apollo.sendQuery(query);

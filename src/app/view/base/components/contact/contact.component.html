@@ -1,12 +1,12 @@
 
 <div *ngIf="item" class="detail-form-input">
-  <input (focusout)="updateAddress()" class="contact" type="text" [(ngModel)]="address.address" placeholder="Musterstrasse">
-  <input (focusout)="updateAddress2()" class="contact" type="text" [(ngModel)]="address.address2" placeholder="Musterpostfach">
+  <input [disabled]="!canEdit" (focusout)="updateAddress()" class="contact" type="text" [(ngModel)]="address.address" placeholder="Musterstrasse">
+  <input [disabled]="!canEdit" (focusout)="updateAddress2()" class="contact" type="text" [(ngModel)]="address.address2" placeholder="Musterpostfach">
   <div style="display:flex;flex-direction: rows"> 
-    <input (focusout)="updateZip()" class="contact" type="text" size="4" [(ngModel)]="address.zip" placeholder="0000">
-    <input (focusout)="updateCity()" class="contact" type="text" [(ngModel)]="address.city" placeholder="Musterstadt">
+    <input [disabled]="!canEdit" (focusout)="updateZip()" class="contact" type="text" size="4" [(ngModel)]="address.zip" placeholder="0000">
+    <input [disabled]="!canEdit" (focusout)="updateCity()" class="contact" type="text" [(ngModel)]="address.city" placeholder="Musterstadt">
 </div>
-  <input (focusout)="updateUrl()" class="contact" type="text" [(ngModel)]="item.url" placeholder="url">
+  <input [disabled]="!canEdit" (focusout)="updateUrl()" class="contact" type="text" [(ngModel)]="item.url" placeholder="url">
 </div>
 
 

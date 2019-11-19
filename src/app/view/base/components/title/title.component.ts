@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ConfigService} from "../../../../config/services/config.service";
 import {ApolloService} from "../../../../data/services/apollo.service";
 import gql from "graphql-tag";
+import { EditableService } from '../../../../auth/services/editable.service';
 
 const titleQuery = (type, sequence) => gql`
   query ClaimQuery {
@@ -38,13 +39,16 @@ export class TitleComponent implements OnInit {
   private type;
   private sequence;
   public item;
+  public canEdit;
 
   constructor(
     public config : ConfigService,
     public apollo : ApolloService,
+    public editable: EditableService
   ) {
     this.type = config.get("type");
     this.sequence = config.get("sequence");
+    this.canEdit = this.editable.isEditable();
 
     const query = titleQuery(this.type, this.sequence);
     const obs = this.apollo.sendQuery(query);

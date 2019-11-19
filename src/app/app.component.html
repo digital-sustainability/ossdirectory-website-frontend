@@ -24,9 +24,10 @@
     <mat-icon>person</mat-icon>
     </div>
     <div fxLayout="row">
-      <a mat-button routerLink="/login" routerLinkActive="active">{{ 'LOGIN' | translate }}</a>
-      <a mat-button routerLink="/register" routerLinkActive="active">{{ 'REGISTER' | translate }}</a>
-      <a mat-button routerLink="/create" routerLinkActive="active">{{ 'CREATE' | translate }}</a>
+      <a mat-button *ngIf="!isAuthenticated" routerLink="/login" routerLinkActive="active">{{ 'LOGIN' | translate }}</a>
+      <a mat-button *ngIf="isAuthenticated" routerLink="/logout" routerLinkActive="active">{{ 'LOGOUT' | translate }}</a>
+      <a mat-button *ngIf="!isAuthenticated" routerLink="/register" routerLinkActive="active">{{ 'REGISTER' | translate }}</a>
+      <a mat-button *ngIf="isAuthenticated" routerLink="/create" routerLinkActive="active">{{ 'CREATE' | translate }}</a>
     </div>
   </div>
 

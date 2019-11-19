@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {ConfigService} from "../../../../config/services/config.service";
 import {ApolloService} from "../../../../data/services/apollo.service";
 import {map} from "rxjs/operators";
+import { EditableService } from '../../../../auth/services/editable.service';
 
 const imageQuery = (type, sequence) => gql`
   query ImageQuery {
@@ -33,10 +34,12 @@ export class ImageComponent implements OnInit {
   private type;
   private sequence;
   public item;
+  public canEdit;
 
   constructor(
     public config : ConfigService,
     public apollo : ApolloService,
+    public editable: EditableService
   ) {
 
   }
@@ -44,6 +47,7 @@ export class ImageComponent implements OnInit {
   ngOnInit() {
     this.type = this.config.get("type");
     this.sequence = this.config.get("sequence");
+    this.canEdit = this.editable.isEditable();
 
 
     const query = imageQuery(this.type, this.sequence);

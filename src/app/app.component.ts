@@ -7,6 +7,8 @@ import { RouteService } from './route/services/route.service';
 import { LanguageService } from './data/services/language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { AuthService } from './auth/auth.service';
+import { ConfigService } from './config/services/config.service';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +34,7 @@ export class AppComponent {
   selectedItem = this.navbarItems[0];
 
   private _langSub: Subscription;
+  public isAuthenticated = false;
 
   constructor(
     // private _sailsService: SailsService,
@@ -39,7 +42,9 @@ export class AppComponent {
     private route: RouteService, // load route service in app component such that all children can access it
     private snackbar: MatSnackBar,
     private translate: TranslateService,
-    private langService: LanguageService) {}
+    private langService: LanguageService,
+    private auth: AuthService,
+    private config: ConfigService) {}
 
   ngOnInit() {
     this._langSub = this.langService.currentLang.subscribe(
@@ -47,6 +52,9 @@ export class AppComponent {
         this.translate.use(lang);
         this.selectedLang = lang;
       });
+    this.config.getSubject().subscribe(d => {
+      this.isAuthenticated = d.authenticated;
+    });
 
   }
 
