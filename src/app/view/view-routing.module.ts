@@ -7,24 +7,23 @@ import { GridComponent } from './grid/grid.component';
 const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes),
-  /*RouterModule.forRoot(routes, )*/],
+  imports: [RouterModule.forChild(routes)],
+  /*RouterModule.forRoot(routes, )*/
   exports: [RouterModule]
 })
 export class ViewRoutingModule {
   constructor(
-    private matcher : MatcherService
+    private matcher: MatcherService
   ){
     routes.push({
       matcher : (url) => this.matcher.detectSequence(url),
-      
       component : DetailComponent
     });
 
     routes.push({
       matcher: (url) => this.matcher.detectTypes(url),
       component: GridComponent
-    })
+    });
 
   }
 }
