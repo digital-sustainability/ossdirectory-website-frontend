@@ -58,7 +58,7 @@ export class ImageComponent implements OnInit {
       // TODO: change this to item.imageUrl when the real imageurls are stored in the db
       const re = /(?:\.([^.]+))?$/;
       const ending = re.exec(this.item.imageUrl)[1];
-      this.item.url = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${this.item.sequence}.${ending}`;
+      this.item.url = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${this.item.uid}.${ending}`;
       console.log(this.item)
     });
   }

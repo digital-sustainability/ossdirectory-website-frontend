@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import gql from 'graphql-tag';
 import { ConfigService } from '../../../../config/services/config.service';
 import { ApolloService } from '../../../../data/services/apollo.service';
-import { Modeltype } from "../../../../data/enums/modeltype.enum";
+import { Modeltype } from '../../../../data/enums/modeltype.enum';
 
 const listQuery = (type: string) => gql`
 query listQuery($searchString : String){
@@ -25,26 +25,26 @@ export class DefaultGridComponent implements OnInit {
 
   public items: any[] = [];
   public type;
-  public searchString: string = "";
+  public searchString = '';
 
   constructor(
-    private config : ConfigService,
-    private apollo : ApolloService,
+    private config: ConfigService,
+    private apollo: ApolloService,
   ) { }
 
   ngOnInit() {
     const re = /(?:\.([^.]+))?$/;
-    this.type = this.config.get("type");
+    this.type = this.config.get('type');
     this.apollo.sendQuery(listQuery(this.type), {searchString: this.searchString}).subscribe(
       (result) => {
         console.log(result);
         this.items = result.data.list.filter(r => r.translations.length > 0);
         this.items.map((value) => {
-          
+
           const ending = re.exec(value.imageUrl)[1];
-          if (this.type === Modeltype.SuccessStory) this.type = "success_story";
-          value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.sequence}.${ending}`
-          
+          if (this.type === Modeltype.SuccessStory) {this.type = 'success_story';}
+          value.imageUrl = `http://minio.digisus.ch/ossdirectory/${this.type.toLowerCase()}_${value.uid}.${ending}`;
+
         });
       }
     );
@@ -59,12 +59,12 @@ export class DefaultGridComponent implements OnInit {
         this.items.map((value) => {
 
           const ending = re.exec(value.imageUrl)[1];
-          if (this.type === Modeltype.SuccessStory) this.type = "success_story";
-          value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.sequence}.${ending}`
+          if (this.type === Modeltype.SuccessStory) { this.type = 'success_story'; }
+          value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.uid}.${ending}`;
 
-        })
+        });
       }
-    )
+    );
   }
 
 }

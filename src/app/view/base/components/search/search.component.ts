@@ -46,7 +46,7 @@ export class SearchComponent implements OnInit {
 
           const ending = re.exec(value.imageUrl)[1];
           if (this.type === Modeltype.SuccessStory) this.type = "success_story";
-          value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.sequence}.${ending}`
+          value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.uid}.${ending}`
 
         })
       }
@@ -62,7 +62,7 @@ export class SearchComponent implements OnInit {
 
           const ending = re.exec(value.imageUrl)[1];
           if (this.type === Modeltype.SuccessStory) this.type = "success_story";
-          value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.sequence}.${ending}`
+          value.imageUrl = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${value.uid}.${ending}`
 
         })
       }

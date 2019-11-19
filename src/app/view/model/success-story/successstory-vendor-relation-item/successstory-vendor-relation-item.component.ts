@@ -14,6 +14,6 @@ export class SuccessstoryVendorRelationItemComponent implements OnInit {
   ngOnInit() {
     const re = /(?:\.([^.]+))?$/;
     const ending = re.exec(this.vendor.imageUrl)[1];
-    this.vendor.imageUrl = `http://minio.digisus.ch/oss-directory/vendor_${this.vendor.sequence}.${ending}`;
+    this.vendor.imageUrl = `http://minio.digisus.ch/oss-directory/vendor_${this.vendor.uid}.${ending}`;
   }
 }
