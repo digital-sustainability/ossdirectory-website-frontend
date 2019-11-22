@@ -1,20 +1,15 @@
-<!-- <div fxLayout="column">
-  <div ng2FileDrop
-       [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
-       (fileOver)="fileOverBase($event)"
-       [uploader]="fileUploader"
-       class="drop-zone">
-    Zip File ablegen
-  </div>
+<div class="form-group">
+    <label for="file">Choose File</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
 </div>
-<div fxLayout="column">
-  ODER
-  <input type="file" ng2FileSelect [uploader]="fileUploader"/>
-</div> -->
-<!-- 
-<ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
+
+
+
+<!-- <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
 (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
     <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-      <button type="button" (click)="openFileSelector()">Browse Files</button>
+      <button  type="button" (click)="openFileSelector()">Choose Image</button>
     </ng-template>
 </ngx-file-drop> -->

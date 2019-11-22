@@ -1,8 +1,9 @@
 <div *ngIf="item" class="img-container">
-  <div class="title-img">
-    <img src="{{item.url}}" (load)="imageLoaded($event)">
-  </div>
-  <div *ngIf="!canEdit" class="upload">
-    <app-image-uploader></app-image-uploader>
+  <div class="title-img" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <img *ngIf="!mouseover || !canEdit" src="{{item.imageUrl}}" (error)="imageNotLoaded($event)">
+    <div class="img-upload">
+        <app-image-uploader ></app-image-uploader>
+    </div>
+    
   </div>
 </div>

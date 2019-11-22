@@ -11,6 +11,7 @@ import { EditableService } from '../../../../auth/services/editable.service';
 const imageQuery = (type, sequence) => gql`
   query ImageQuery {
     ${type}( sequence : "${sequence}" ) {
+      uid
       imageUrl
       sequence
       __typename
@@ -37,6 +38,7 @@ export class ImageComponent implements OnInit {
   private sequence;
   public item;
   public canEdit;
+  public mouseover;
 
   constructor(
     public config : ConfigService,
@@ -50,18 +52,12 @@ export class ImageComponent implements OnInit {
     this.type = this.config.get("type");
     this.sequence = this.config.get("sequence");
     this.canEdit = this.editable.isEditable();
-
-
+    this.canEdit = true;
     const query = imageQuery(this.type, this.sequence);
     const obs = this.apollo.sendQuery(query);
     obs.subscribe(res => {
       this.item = res.data[this.type][0];
-
-      // TODO: change this to item.imageUrl when the real imageurls are stored in the db
-      const re = /(?:\.([^.]+))?$/;
-      const ending = re.exec(this.item.logo)[1];
-      this.item.url = `http://minio.digisus.ch/oss-directory/${this.type.toLowerCase()}_${this.item.uid}.${ending}`;
-      console.log(this.item)
+      this.config.set('uid', this.item.uid);
     });
   }
 
@@ -73,7 +69,15 @@ export class ImageComponent implements OnInit {
     });
   }
 
-  imageLoaded($event) {
-    console.log("imageloaded", $event);
+  public imageNotLoaded($event) {
+
+  }
+
+  public mouseenter() {
+      this.mouseover = true;
+  }
+
+  public mouseleave() {
+      this.mouseover = false;
   }
 }
