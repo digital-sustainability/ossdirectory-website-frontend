@@ -5,6 +5,7 @@ import {ConfigService} from "../../../../config/services/config.service";
 import {ApolloService} from "../../../../data/services/apollo.service";
 import {map} from "rxjs/operators";
 import { EditableService } from '../../../../auth/services/editable.service';
+import { Modeltype } from "../../../../data/enums/modeltype.enum";
 
 
 //TODO: go for uid
@@ -12,6 +13,7 @@ const imageQuery = (type, sequence) => gql`
   query ImageQuery {
     ${type}( sequence : "${sequence}" ) {
       uid
+      logo
       imageUrl
       sequence
       __typename
@@ -49,6 +51,8 @@ export class ImageComponent implements OnInit {
   }
 
   ngOnInit() {
+    const re = /(?:\.([^.]+))?$/;
+
     this.type = this.config.get("type");
     this.sequence = this.config.get("sequence");
     this.canEdit = this.editable.isEditable();
@@ -57,6 +61,11 @@ export class ImageComponent implements OnInit {
     const obs = this.apollo.sendQuery(query);
     obs.subscribe(res => {
       this.item = res.data[this.type][0];
+
+      const ending = re.exec(this.item.logo)[1];
+
+      if (this.type === Modeltype.SuccessStory) {this.type = 'success_story';}
+      this.item.imageUrl = `http://minio.digisus.ch/ossdirectory/${this.type.toLowerCase()}_${this.item.uid}.${ending}`;
       this.config.set('uid', this.item.uid);
     });
   }

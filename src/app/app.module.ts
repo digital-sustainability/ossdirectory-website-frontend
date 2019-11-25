@@ -20,6 +20,7 @@ import { GraphQLModule } from './graphql/graphql.module';
 import { HttpLoaderFactory, ViewModule } from './view/view.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpModule } from "./http/http.module";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    HttpModule,
   ],
   exports: [
     MaterialDesignModule,

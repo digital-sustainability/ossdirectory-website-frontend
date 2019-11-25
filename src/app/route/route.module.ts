@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
   declarations: [],
   imports: [
     CommonModule
-  ]
+  ],
+  providers: [
+  ],
 })
 export class RouteModule { }

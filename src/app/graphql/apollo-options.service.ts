@@ -85,7 +85,7 @@ export class ApolloOptionsService {
 
     let link: ApolloLink = this.link();
     const onError = this.onErrorService.unauthorizedRetry();
-    link = link.concat(onError);
+    // link = link.concat(onError);
 
     const cache = this.cache();
     const headers = this.headers();
